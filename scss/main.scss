@@ -1,0 +1,58 @@
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+@import "./base/base";
+@import "./base/animations";
+@import "./base/typography";
+@import "./base/utilities";
+
+@import "./pages/home";
+@import "./layouts/grid";
+
+// Components
+@import "./components/header.scss";
+@import './components/about.scss'
+
+// NOTES /////
+// // the & symbol nested in a sass selector represents the selector up to that point
+// // using Block Element Modifier: .block__element--modifier syntax we can write fewer selectors
+// .header {
+//   height: 95vh;
+//   position: relative;
+// }
+// .header__logo-box {
+//   position: absolute;
+//   left: 4rem;
+//   top: 4rem;
+// }
+// // becomes =>
+// .header {
+//   height: 95vh;
+//   position: relative;
+//   &__logo-box {
+//     position: absolute;
+//     left: 4rem;
+//     top: 4rem;
+//   }
+// }
+
+
+
+// SELECTORS
+
+// select the last child element: .selector:last-child{}
+
+// select all children elements except the last one 
+// .selector:not(:last-child){} 
+
+// .row {
+//   max-width: $grid-width;
+//   background-color: lightgreen;
+//   // center block elements with margin: 0 auto;
+//   margin: 0 auto;
+//   &:not(:last-child) {
+//     margin-bottom: $gutter-vertical;
+//     background-color: red;
+//   }
+// }

@@ -1,0 +1,89 @@
+/* HEADER - HERO ////////////////// */
+.header {
+  height: 95vh;
+  /* background image with color gradient overlayed */
+  background: linear-gradient($color-primary--dark2, $color-secondary--dark2),
+    url("../img/hero.jpg");
+  /* cover - make image fit within it's container */
+  background-size: cover;
+  /* as viewport changes, keep the TOP of image visible: ie - Dont crop the top */
+  background-position: top;
+  /* bottom border slant up from left to right */
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  /* relative so that it's children (absolute) can inherit position */
+  position: relative;
+
+  &__logo-box {
+    /* potition absolute - will inherit position from parent with position: relative  */
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+  }
+  &__logo {
+    height: 35px;
+  }
+  &__hero-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+//HERO BUTTON
+.hero--button {
+  letter-spacing: 1px;
+  margin-top: 5%;
+  background: linear-gradient(to right, black 50%, white 50%);
+  background-size: 200% 100%;
+  animation-delay: 2s;
+  background-position: right bottom;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.4);
+  position: relative;
+
+  &:hover {
+    background-position: left bottom;
+    color: white;
+  }
+  &:active {
+    transform: translateY(5px);
+  }
+}
+
+// HERO TEXT ////
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+
+  &--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 3rem;
+    text-align: center;
+  }
+  &--sub {
+    display: block;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 15px;
+    width: 100%;
+    &::before {
+      opacity: 1 !important;
+    }
+  }
+}
+
+.sub--animate {
+  animation: moveInRight 1.5s ease-out 0.4s;
+  animation-fill-mode: backwards;
+}
