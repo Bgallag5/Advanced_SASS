@@ -17,6 +17,8 @@ html {
 body {
   padding: 1.5rem;
   box-sizing: border-box;
+  font-size: 1.5rem;
+  background-color: #f7f7f7;
 }
 
 /* //////// UNIVERSAL STYLES //////// */
@@ -223,7 +225,6 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #f7f7f7;
-  font-size: 1.5rem;
 }
 .about__header {
   margin-bottom: 4rem;
@@ -286,6 +287,50 @@ body {
 }
 .about__content-images:hover .about-img:not(:hover) {
   transform: scale(0.95);
+}
+
+.features-section {
+  height: 95;
+  margin-top: 20vh;
+  padding: 35vh 0;
+  background: linear-gradient(to right, rgba(126, 213, 111, 0.75), rgba(40, 180, 133, 0.75)), url("../img/nat-10.jpg");
+  background-size: cover;
+  /* as viewport changes, keep the TOP of image visible: ie - Dont crop the top */
+  background-position: top;
+  clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+  overflow: visible;
+}
+
+.features {
+  width: 80%;
+  gap: 4rem;
+}
+.features__card {
+  padding: 1rem;
+  padding-top: 1.5rem;
+  width: 20%;
+  height: 35vh;
+  border: 1px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  background: #fff;
+  opacity: 0.85;
+  transition: all 0.2s;
+}
+.features__card:hover {
+  transform: scale(1.1);
+}
+.features__card--icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  color: #28b485;
+}
+.features__card--text {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */
