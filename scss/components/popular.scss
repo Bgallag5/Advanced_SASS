@@ -50,23 +50,55 @@
           //back side is rotated 180deg to start
           -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          gap: 20%;
+          
+          &-button{
+            letter-spacing: 1px;
+            margin-top: 5%;
+            // background: linear-gradient(to right, black 50%, white 50%);
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+            color: black;
+            background-color: white;
+          
+            &:hover {
+            //   background-position: left bottom;
+            }
+            &:active {
+              transform: translateY(5px);
+            }
+          }
+
+          &-price h2{
+            font-size: 6rem;
+            font-weight: 300;
+          }
+
           &-1 {
             background: linear-gradient(145deg, $yellow-one, $yellow-two);
           }
           &-2 {
             background: linear-gradient(
               145deg,
-              $color-secondary--light,
-              $color-secondary--dark
+              $color-primary--light,
+              $color-primary--dark
             );
           }
           &-3 {
             background: linear-gradient(
               145deg,
-              $color-primary--light,
-              $color-primary--dark
+              $color-secondary--light,
+              $color-secondary--dark
             );
           }
+
         }
       }
       //on card hover rotate front -180deg, and rotate back to 0deg
@@ -93,8 +125,8 @@
     //new css property blend-mode: mix two different backgrounds
     background-blend-mode: screen;
     position: relative;
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
 
     &--title {
       position: absolute;
@@ -137,16 +169,16 @@
   //card 2
     &-2 {
       .card__header {
-      background: linear-gradient(rgba($yellow-one, 1), rgba($yellow-two, 1)),
-        url("../img/nat-5.jpg");
+      background: linear-gradient(rgba($color-primary--light, 1), rgba($color-primary--dark, 1)),
+        url("../img/nat-1.jpg");
         background-size: cover;
 
 
       &--title span {
         background: linear-gradient(
           to right,
-          rgba($yellow-one, 0.8),
-          rgba($yellow-two, 0.8)
+          rgba($color-primary--light, 0.8),
+          rgba($color-primary--dark, 0.8)
         );
       }
      }
@@ -154,16 +186,16 @@
   //card 2
     &-3 {
       .card__header {
-      background: linear-gradient(rgba($yellow-one, 1), rgba($yellow-two, 1)),
-        url("../img/nat-5.jpg");
+      background: linear-gradient(rgba($color-secondary--light, 1), rgba($color-secondary--dark, 1)),
+        url("../img/nat-7.jpg");
         background-size: cover;
 
 
       &--title span {
         background: linear-gradient(
           to right,
-          rgba($yellow-one, 0.8),
-          rgba($yellow-two, 0.8)
+          rgba($color-secondary--light, 0.8),
+          rgba($color-secondary--dark, 0.8)
         );
       }
      }
@@ -172,7 +204,7 @@
   //bottom half of all cards
   .card__details {
     //   border: 1px solid green;
-    color: black;
+    color: $text-grey-dark;
     display: flex;
     flex-direction: column;
     height: auto;
