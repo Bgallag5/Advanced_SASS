@@ -40,7 +40,7 @@
             </div>
         </header>
         <main>
-            <section class="about">
+            <section class="about section">
                 <h2 class="about__header secondary-header">Exciting Tours for Adventurous People</h2>
                 <div class="about__content row">
                     <div class="row__col about__content-text">
@@ -51,6 +51,7 @@
                         <p>It's essentially nonsense text that still gives an idea of what real words will look like in the final product</p>
                         <button class="btn">Learn More &#8594;</button>
                     </div>
+                    <!-- LAZY LOAD!!! -->
                     <div class="row__col about__content-images">
                         <img src="./img/nat-1.jpg" alt="nature" class="about-img about-img--1">
                         <img src="./img/nat-2.jpg" alt="nature" class="about-img about-img--2">
@@ -60,7 +61,7 @@
                  
             </section>
 
-            <section class="features-section">
+            <section class="features-section section">
                 <div class="row features">
                     <div class="row__col features__card">
                         <i class="fa fa-solid fa-globe features__card--icon"></i>
@@ -84,7 +85,58 @@
                     </div>
                 </div>
             </section>
-            <div style="height: 100vh;">Hello world</div>
+
+            <section class="popular section">
+            <h1 class="secondary-header popular__header">Most Popular Tours</h1>
+            <div class="popular__cards">
+                <div class="popular__cards--card">
+                    <div class="card__side card__side--front card__side--front-1">
+                        <div class="card__header"> 
+                            <h2 class="card__header--title"><span>The Sea Explorer</span></h2>
+                        </div>
+                        <div class="card__details">
+                            <p>3 day tours</p>
+                            <p>2 Tour Guides</p>
+                            <p>Up to 30 people</p>
+                            <p>Cozy Lodging</p>
+                            <p>Difficulty: Easy</p>
+                        </div>
+                    </div>
+                    <div class="card__side card__side--back card__side--back-1">Back</div>
+                </div>
+                <div class="popular__cards--card">
+                    <div class="card__side card__side--front card__side--front-2">
+                        <div class="card__header"> 
+                            <h2 class="card__header--title"><span>The Sea Explorer</span></h2>
+                        </div>
+                        <div class="card__details">
+                            <p>3 day tours</p>
+                            <p>2 Tour Guides</p>
+                            <p>Up to 30 people</p>
+                            <p>Cozy Lodging</p>
+                            <p>Difficulty: Easy</p>
+                        </div>
+                    </div>
+                    <div class="card__side card__side--back card__side--back-2">Back</div>
+                </div>
+                <div class="popular__cards--card">
+                    <div class="card__side card__side--front card__side--front-3">
+                        <div class="card__header"> 
+                            <h2 class="card__header--title"><span>The Sea Explorer</span></h2>
+                        </div>
+                        <div class="card__details">
+                            <p>3 day tours</p>
+                            <p>2 Tour Guides</p>
+                            <p>Up to 30 people</p>
+                            <p>Cozy Lodging</p>
+                            <p>Difficulty: Easy</p>
+                        </div>
+                    </div>
+                    <div class="card__side card__side--back card__side--back-3">Back</div>
+                </div>
+            </div>
+            </section>
+
         </main>
     </body>
     <script src="./js/script.js"></script>

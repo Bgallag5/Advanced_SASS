@@ -111,6 +111,10 @@ body {
   color: rgb(94, 94, 94);
 }
 
+.section {
+  height: 100vh;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -137,7 +141,7 @@ body {
 .header {
   height: 95vh;
   /* background image with color gradient overlayed */
-  background: linear-gradient(rgba(0, 128, 0, 0.2), rgba(0, 0, 255, 0.4)), url("../img/hero.jpg");
+  background: linear-gradient(to right, rgba(0, 128, 0, 0.2), rgba(0, 0, 255, 0.4)), url("../img/hero.jpg");
   /* cover - make image fit within it's container */
   background-size: cover;
   /* as viewport changes, keep the TOP of image visible: ie - Dont crop the top */
@@ -227,7 +231,7 @@ body {
   background-color: #f7f7f7;
 }
 .about__header {
-  margin-bottom: 4rem;
+  margin-bottom: 8rem;
 }
 .about__content {
   width: 75%;
@@ -317,7 +321,7 @@ body {
   text-align: center;
   gap: 0.5rem;
   background: #fff;
-  opacity: 0.85;
+  opacity: 0.8;
   transition: all 0.2s;
 }
 .features__card:hover {
@@ -331,6 +335,137 @@ body {
 .features__card--text {
   text-overflow: ellipsis;
   overflow: hidden;
+}
+
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10rem;
+}
+.popular__header {
+  margin-bottom: 8rem;
+}
+.popular__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 6rem;
+  width: 80%;
+}
+.popular__cards--card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  height: 65vh;
+  width: 20vw;
+}
+.popular__cards--card .card__side {
+  perspective: 150rem;
+  width: 100%;
+  height: 65vh;
+  position: absolute;
+  transition: all 0.6s ease-out;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+}
+.popular__cards--card .card__side--back {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.popular__cards--card .card__side--back-1 {
+  background: linear-gradient(145deg, #ffb900, #ff7730);
+}
+.popular__cards--card .card__side--back-2 {
+  background: linear-gradient(145deg, rgb(61, 200, 255), rgb(0, 33, 221));
+}
+.popular__cards--card .card__side--back-3 {
+  background: linear-gradient(145deg, #7ed56f, #28b485);
+}
+.popular__cards--card:hover .card__side--front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.popular__cards--card:hover .card__side--back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+.card__side--front {
+  display: flex;
+  flex-direction: column;
+}
+.card__side--front .card__header {
+  height: 23rem;
+  background-blend-mode: screen;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+}
+.card__side--front .card__header--title {
+  position: absolute;
+  color: white;
+  right: 0;
+  text-align: right;
+  top: 1%;
+  padding: 0.5rem;
+  font-size: 2.8rem;
+  font-weight: 300;
+  overflow: visible;
+  display: inline-block;
+  width: 60%;
+  z-index: 999;
+}
+.card__side--front .card__header--title span {
+  text-align: right;
+  padding: 0.5rem;
+}
+.card__side--front-1 .card__header {
+  background: linear-gradient(#ffb900, #ff7730), url("../img/nat-5.jpg");
+  background-size: cover;
+}
+.card__side--front-1 .card__header--title span {
+  background: linear-gradient(to right, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8));
+}
+.card__side--front-2 .card__header {
+  background: linear-gradient(#ffb900, #ff7730), url("../img/nat-5.jpg");
+  background-size: cover;
+}
+.card__side--front-2 .card__header--title span {
+  background: linear-gradient(to right, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8));
+}
+.card__side--front-3 .card__header {
+  background: linear-gradient(#ffb900, #ff7730), url("../img/nat-5.jpg");
+  background-size: cover;
+}
+.card__side--front-3 .card__header--title span {
+  background: linear-gradient(to right, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8));
+}
+.card__side--front .card__details {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.card__side--front .card__details p {
+  padding-bottom: 1rem;
+  width: 75%;
+  text-align: center;
+}
+.card__side--front .card__details p:not(:last-child) {
+  border-bottom: solid 1px rgb(119, 119, 119);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,7 +2,7 @@
 .header {
   height: 95vh;
   /* background image with color gradient overlayed */
-  background: linear-gradient($color-primary--dark2, $color-secondary--dark2),
+  background: linear-gradient(to right, $color-primary--dark2, $color-secondary--dark2),
     url("../img/hero.jpg");
   /* cover - make image fit within it's container */
   background-size: cover;

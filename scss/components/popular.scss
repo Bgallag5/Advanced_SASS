@@ -1,0 +1,193 @@
+.popular {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+
+  &__header {
+    margin-bottom: 8rem;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6rem;
+    width: 80%;
+    // border: 1px solid blue;
+    &--card {
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white;
+      //for flip to be smooth, set height and width on parent element...
+      height: 65vh;
+      width: 20vw;
+
+      .card__side {
+        perspective: 150rem;
+        //...then match height and set width to 100%
+        width: 100%;
+        height: 65vh;
+        position: absolute;
+        transition: all 0.6s ease-out;
+        top: 0;
+        left: 0;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+
+        &--front {
+          //   background-color: orangered;
+        }
+
+        &--back {
+          //back side is rotated 180deg to start
+          -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+          &-1 {
+            background: linear-gradient(145deg, $yellow-one, $yellow-two);
+          }
+          &-2 {
+            background: linear-gradient(
+              145deg,
+              $color-secondary--light,
+              $color-secondary--dark
+            );
+          }
+          &-3 {
+            background: linear-gradient(
+              145deg,
+              $color-primary--light,
+              $color-primary--dark
+            );
+          }
+        }
+      }
+      //on card hover rotate front -180deg, and rotate back to 0deg
+      &:hover .card__side--front {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+      }
+      &:hover .card__side--back {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+      }
+    }
+  }
+}
+
+//Card Sides
+.card__side--front {
+  display: flex;
+  flex-direction: column;
+
+  //top half of all cards
+  .card__header {
+    height: 23rem;
+    //new css property blend-mode: mix two different backgrounds
+    background-blend-mode: screen;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 85%, 0% 100%);
+
+    &--title {
+      position: absolute;
+      color: white;
+      right: 0;
+      text-align: right;
+      top: 1%;
+      padding: .5rem;
+      font-size: 2.8rem;
+      font-weight: 300;
+      overflow: visible;
+      display: inline-block;
+      width: 60%;
+      z-index: 999;
+
+      span{
+        text-align: right;
+        padding: .5rem;
+      }
+    }
+  }
+
+  //card 1
+    &-1 {
+      .card__header {
+      background: linear-gradient(rgba($yellow-one, 1), rgba($yellow-two, 1)),
+        url("../img/nat-5.jpg");
+        background-size: cover;
+
+
+      &--title span {
+        background: linear-gradient(
+          to right,
+          rgba($yellow-one, 0.8),
+          rgba($yellow-two, 0.8)
+        );
+      }
+     }
+   }
+  //card 2
+    &-2 {
+      .card__header {
+      background: linear-gradient(rgba($yellow-one, 1), rgba($yellow-two, 1)),
+        url("../img/nat-5.jpg");
+        background-size: cover;
+
+
+      &--title span {
+        background: linear-gradient(
+          to right,
+          rgba($yellow-one, 0.8),
+          rgba($yellow-two, 0.8)
+        );
+      }
+     }
+   }
+  //card 2
+    &-3 {
+      .card__header {
+      background: linear-gradient(rgba($yellow-one, 1), rgba($yellow-two, 1)),
+        url("../img/nat-5.jpg");
+        background-size: cover;
+
+
+      &--title span {
+        background: linear-gradient(
+          to right,
+          rgba($yellow-one, 0.8),
+          rgba($yellow-two, 0.8)
+        );
+      }
+     }
+   }
+
+  //bottom half of all cards
+  .card__details {
+    //   border: 1px solid green;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    p {
+      padding-bottom: 1rem;
+      width: 75%;
+      text-align: center;
+      &:not(:last-child) {
+        border-bottom: solid 1px $text-grey-light;
+      }
+    }
+  }
+}
