@@ -24,16 +24,16 @@
             border-top: 1px solid $color-grey--light;
             width: 30%;
             padding-top: 3rem;
-            // line-height: 1rem;
+            font-size: 100%;
         }
 
         &--links{
-            text-align: center;
-
             .footer__links-list{
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
                 list-style-type: none;
                 list-style: none;
-                // text-align: ;
 
                 li{
                     display: inline-block;
