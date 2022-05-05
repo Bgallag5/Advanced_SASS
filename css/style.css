@@ -79,6 +79,25 @@ body {
     transform: translateX(0);
   }
 }
+@keyframes pulseBtn {
+  0% {
+    box-shadow: 0 0 0 0 #fff;
+  }
+  100% {
+    box-shadow: 0 0 0 2rem rgba(255, 255, 255, 0);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(25deg);
+  }
+  66% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 body {
   font-family: "Mulish", sans-serif;
   line-height: 1.7;
@@ -392,10 +411,14 @@ body {
   margin-top: 5%;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   color: black;
   background-color: white;
+  width: 20rem;
+}
+.popular__cards--card .card__side--back-button:hover {
+  animation: pulseBtn 1s;
+  transform: translateY(-2px);
 }
 .popular__cards--card .card__side--back-button:active {
   transform: translateY(5px);
@@ -489,6 +512,57 @@ body {
 }
 .card__side--front .card__details p:not(:last-child) {
   border-bottom: solid 1px rgb(119, 119, 119);
+}
+
+.footer {
+  height: 65vh;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem;
+  gap: 10rem;
+}
+.footer__logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.footer__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20rem;
+  align-items: flex-start;
+  color: #fff;
+}
+.footer__content > div {
+  border-top: 1px solid #f7f7f7;
+  width: 30%;
+  padding-top: 3rem;
+}
+.footer__content--links {
+  text-align: center;
+}
+.footer__content--links .footer__links-list {
+  list-style-type: none;
+  list-style: none;
+}
+.footer__content--links .footer__links-list li {
+  display: inline-block;
+  cursor: pointer;
+}
+.footer__content--links .footer__links-list li:not(:last-child) {
+  margin-right: 2rem;
+}
+.footer__content--links .footer__links-list li:hover {
+  color: transparent;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: wiggle 0.2s ease-in-out;
+}
+.footer__content--links .footer__links-list li:active {
+  transform: translateY(0.5rem);
 }
 
 /*# sourceMappingURL=style.css.map */

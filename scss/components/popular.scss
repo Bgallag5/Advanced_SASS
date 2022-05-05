@@ -63,13 +63,14 @@
             // background: linear-gradient(to right, black 50%, white 50%);
             cursor: pointer;
             text-decoration: none;
-            box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.4);
             position: relative;
             color: black;
             background-color: white;
-          
+            width: 20rem;
+            
             &:hover {
-            //   background-position: left bottom;
+                animation: pulseBtn 1s;
+                transform: translateY(-2px);
             }
             &:active {
               transform: translateY(5px);
