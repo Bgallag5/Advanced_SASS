@@ -25,6 +25,25 @@
     color: $text-grey-dark;
 }
 
+//  BUTTONS   //
+.btn {
+    border-radius: 5rem;
+    border: none;
+    padding: 1.3rem 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover{
+        transform: translateY(-2px);
+    }
+    &:active{
+        transform: translateY(2px)
+    }
+  }
+
 .btn-plain-green{
     margin-top: 4rem;
     background: none;

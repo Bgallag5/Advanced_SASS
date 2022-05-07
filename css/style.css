@@ -21,17 +21,8 @@ body {
   background-color: #f7f7f7;
 }
 
-/* //////// UNIVERSAL STYLES //////// */
-.btn {
-  border-radius: 5rem;
-  border: none;
-  padding: 1.3rem 2rem;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+/* //////// UNIVERSAL STYLES //////// *
+
 
 /* UNIVERSAL STYLES */
 /* Hero Animations */
@@ -128,6 +119,23 @@ body {
   font-size: 1.6rem;
   margin-bottom: 1rem;
   color: rgb(94, 94, 94);
+}
+
+.btn {
+  border-radius: 5rem;
+  border: none;
+  padding: 1.3rem 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(2px);
 }
 
 .btn-plain-green {
@@ -569,7 +577,12 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10rem 0rem;
-  height: auto;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.user-story > * {
+  z-index: 99;
 }
 .user-story--header {
   margin-bottom: 8rem;
@@ -578,10 +591,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  width: 75%;
+  width: 70%;
 }
 .user-story__stories .story {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 5rem 10rem rgba(0, 0, 0, 0.2);
   padding: 4rem;
   padding-left: 6rem;
@@ -630,6 +643,145 @@ body {
 }
 .user-story .btn-all-stories {
   margin-top: 8rem;
+  background-color: #28b485;
+  color: #fff;
+}
+.user-story--video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: fit-content;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+.user-story--video__content {
+  width: 100%;
+  opacity: 0.2;
+  object-fit: cover;
+}
+
+.booking {
+  background: linear-gradient(to bottom right, #7ed56f, #28b485);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking__form-container {
+  background-color: white;
+  max-height: 65vh;
+  height: auto;
+  width: 65vw;
+  background: url("../img/nat-4.jpg");
+  background-position: top;
+  background-size: cover;
+  object-fit: cover;
+}
+.booking__form-container .booking__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 2rem;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  position: relative;
+}
+.booking__form-container .booking__form > * {
+  margin-bottom: 3rem;
+}
+.booking__form-container .booking__form--user-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.booking__form-container .booking__form--user-inputs .booking__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rbga(#fff, 0.9);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  transition: all 0.3s;
+}
+.booking__form-container .booking__form--user-inputs .booking__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #55c57a;
+}
+.booking__form-container .booking__form--checkbox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+  /* Hide the browser's default radio button */
+  /* Create a custom radio button */
+  /* On mouse-over, add a grey background color */
+  /* When the radio button is checked, add a blue background */
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  /* Show the indicator (dot/circle) when checked */
+  /* Style the indicator (dot/circle) */
+}
+.booking__form-container .booking__form--checkbox .form__radio-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+.booking__form-container .booking__form--checkbox .form__radio-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.booking__form-container .booking__form--checkbox .form__radio-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  vertical-align: text-top;
+}
+.booking__form-container .booking__form--checkbox .container:hover input ~ .form__radio-button {
+  background-color: #ccc;
+}
+.booking__form-container .booking__form--checkbox .form__radio-label input:checked ~ .form__radio-button {
+  background-color: #55c57a;
+}
+.booking__form-container .booking__form--checkbox .form__radio-button:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.booking__form-container .booking__form--checkbox .form__radio-label input:checked ~ .form__radio-button:after {
+  display: block;
+}
+.booking__form-container .booking__form--checkbox .form__radio-label .form__radio-button:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+.booking__form-container .booking__form--btn {
+  width: 35%;
+  background: linear-gradient(to right, #55c57a, #28b485);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,150 @@
+.booking {
+  background: linear-gradient(
+    to bottom right,
+    $color-primary--light,
+    $color-primary--dark
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.booking__form-container {
+  background-color: white;
+  max-height: 65vh;
+  height: auto;
+  width: 65vw;
+  // padding: 2rem;
+  background: url("../img/nat-4.jpg");
+  background-position: top;
+  background-size: cover;
+  object-fit: cover;
+
+  .booking__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem;
+    // align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    background: rgba($color-white, 0.8);
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+    position: relative;
+
+    //apply to all children elements of the paretn container
+    & > * {
+      margin-bottom: 3rem;
+    }
+
+    &--header {
+    }
+
+    &--user-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+      .booking__input {
+        font-size: 1.5rem;
+        font-family: inherit;
+        color: inherit;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        background-color: rbga($color-white, 0.9);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 90%;
+        display: block;
+        transition: all 0.3s;
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+          border-bottom: 3px solid $color-primary;
+        }
+      }
+    }
+
+    // RADIO BUTTONS //
+    &--checkbox {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 1rem;
+
+      .form__radio-label {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 1.6rem;
+        //vertical align radio button and label
+        line-height: 1.8;
+      }
+
+      /* Hide the browser's default radio button */
+      .form__radio-label input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create a custom radio button */
+      .form__radio-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+        //vertical align radio button and label
+        vertical-align: text-top;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .form__radio-button {
+        background-color: #ccc;
+      }
+
+      /* When the radio button is checked, add a blue background */
+      .form__radio-label input:checked ~ .form__radio-button {
+        background-color: $color-primary;
+      }
+
+      /* Create the indicator (the dot/circle - hidden when not checked) */
+      .form__radio-button:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the indicator (dot/circle) when checked */
+      .form__radio-label input:checked ~ .form__radio-button:after {
+        display: block;
+      }
+
+      /* Style the indicator (dot/circle) */
+      .form__radio-label .form__radio-button:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+      }
+    }
+
+    &--btn {
+      //   position: absolute;
+      //   bottom: 10%;
+      width: 35%;
+      background: $color-green-grad;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}

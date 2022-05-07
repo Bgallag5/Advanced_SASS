@@ -1,10 +1,17 @@
 .user-story {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   padding: 10rem 0rem;
-  height: auto;
+  height: 100%;
+  position: relative;
+//   margin-bottom: 5rem;
+  overflow: hidden;
+
+  & > * {
+    z-index: 99;
+    // opacity: 1;
+  }
 
   &--header {
     margin-bottom: 8rem;
@@ -14,10 +21,10 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    width: 75%;
+    width: 70%;
 
     .story {
-      background-color: rgba(white, 0.3);
+      background-color: rgba(white, 0.7);
       box-shadow: 0 5rem 10rem rgba($color-black, 0.2);
       padding: 4rem;
       padding-left: 6rem;
@@ -81,5 +88,24 @@
 
   .btn-all-stories{
       margin-top: 8rem;
+      background-color: $color-primary--dark;
+      color: $color-white;
+  }
+  //BACKGROUND VIDEO USER STORIES
+  &--video{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: fit-content;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    &__content{
+        // height: auto;
+        width: 100%;
+        opacity: .2;
+        //object-fit: cover; - make element (video) fill entire parent while maintaining it's aspect ratio 
+        object-fit: cover;
+    }
   }
 }
