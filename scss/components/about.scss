@@ -21,26 +21,6 @@
       p {
         margin-bottom: 1rem;
       }
-      button {
-        margin-top: 2rem;
-        background: none;
-        border-radius: 0px;
-        border-bottom: 1px solid $color-primary--dark;
-        color: $color-primary--dark;
-        text-align: left;
-        padding: 0.5rem;
-        width: auto;
-        overflow-x: hidden;
-
-        &:hover {
-          transform: translateY(-2px);
-          background-color: $color-primary--dark;
-          color: $color-white;
-        }
-        &:active {
-          transform: translateY(2px);
-        }
-      }
     }
     &-images {
       position: relative;
@@ -50,8 +30,8 @@
         z-index: 99;
         border: 3px solid $color-primary--light;
         width: 50%;
-        transition: all .3s;
-        box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+        transition: all 0.3s;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
 
         &--1 {
           left: 0;

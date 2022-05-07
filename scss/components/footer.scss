@@ -1,62 +1,65 @@
-.footer{
-    height: 65vh;
-    background-color: $color-grey--dark;
+.footer {
+  height: 65vh;
+  background-color: $color-grey--dark;
+  display: flex;
+  flex-direction: column;
+  padding: 10rem;
+  gap: 10rem;
+
+  &__logo {
     display: flex;
-    flex-direction: column;
-    padding: 10rem;
-    gap: 10rem;
+    justify-content: center;
+    width: 100%;
+  }
 
-    &__logo{
-        display: flex;
-        justify-content: center;
-        width: 100%;
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20rem;
+    align-items: flex-start;
+    color: $color-white;
+
+    & > div {
+      border-top: 1px solid $color-grey--light;
+      width: 30%;
+      padding-top: 3rem;
+      font-size: 100%;
     }
 
-    &__content{
+    &--links {
+      .footer__links-list {
         display: flex;
-        flex-direction: row;
+        flex-wrap: nowrap;
         justify-content: center;
-        gap: 20rem;
-        align-items: flex-start;
-        color: $color-white;
+        list-style-type: none;
+        list-style: none;
 
-        & > div {
-            border-top: 1px solid $color-grey--light;
-            width: 30%;
-            padding-top: 3rem;
-            font-size: 100%;
+        li {
+          display: inline-block;
+          cursor: pointer;
+          &:not(:last-child) {
+            margin-right: 2rem;
+          }
+
+          &:hover {
+            color: transparent;
+            background-image: linear-gradient(
+              to right,
+              $color-primary--light,
+              $color-primary--dark
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: wiggle 0.2s ease-in-out;
+          }
+          &:active {
+            transform: translateY(0.5rem);
+          }
         }
-
-        &--links{
-            .footer__links-list{
-                display: flex;
-                flex-wrap: nowrap;
-                justify-content: center;
-                list-style-type: none;
-                list-style: none;
-
-                li{
-                    display: inline-block;
-                    cursor: pointer;
-                    &:not(:last-child){
-                        margin-right: 2rem;
-                    }
-
-                    &:hover{
-                        color: transparent;
-                        background-image: linear-gradient(to right, $color-primary--light, $color-primary--dark);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        animation: wiggle .2s ease-in-out;
-                    }
-                    &:active{
-                        transform: translateY(.5rem);
-                    }
-                }
-            }
-        }
-        &--copywrite{
-           
-        }
+      }
     }
+    &--copywrite {
+    }
+  }
 }

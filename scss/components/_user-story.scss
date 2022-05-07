@@ -1,0 +1,85 @@
+.user-story {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  padding: 10rem 0rem;
+  height: auto;
+
+  &--header {
+    margin-bottom: 8rem;
+  }
+
+  &__stories {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 75%;
+
+    .story {
+      background-color: rgba(white, 0.3);
+      box-shadow: 0 5rem 10rem rgba($color-black, 0.2);
+      padding: 4rem;
+      padding-left: 6rem;
+      //instead of clip path, use skew to angle/lean box left or right...
+      transform: skewX(-12deg);
+
+      & > * {
+        //...then un-skew all content within that container
+        transform: skewX(12deg);
+      }
+
+      &--img {
+        height: 15rem;
+        width: 15rem;
+        // background-color: red;
+        float: left;
+        // margin: 0rem 1rem;
+        margin-right: 2rem;
+        //WRAP TEXT AROUND AN ELEMENT
+        //define the shape of the element
+        clip-path: circle(50% at 50% 50%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        //define the SAME shape of the text around the element
+        shape-outside: circle(50% at 50% 50%);
+        -webkit-shape-outside: circle(50% at 50% 50%);
+        position: relative;
+        transition: all 0.5s;
+        overflow: hidden;
+
+        &-src {
+          height: 100%;
+          object-fit: cover;
+          transform: translateX(-3rem) scale(1.3);
+          transition: all 0.5s;
+        }
+
+        &-caption {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, 20%);
+          opacity: 0;
+          color: white;
+          text-transform: uppercase;
+          text-align: center;
+          transition: all 0.5s;
+        }
+      }
+      &:hover {
+        .story--img-caption {
+          transform: translate(-50%, -50%);
+          opacity: 1;
+        }
+        .story--img-src {
+          transform: translateX(-3rem) scale(1);
+          filter: blur(2px) brightness(90%);
+        }
+      }
+    }
+  }
+
+  .btn-all-stories{
+      margin-top: 8rem;
+  }
+}
