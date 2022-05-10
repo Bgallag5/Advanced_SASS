@@ -100,7 +100,7 @@ body {
   margin-bottom: 1rem;
   text-transform: uppercase;
   color: transparent;
-  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-image: linear-gradient(to right, #55c57a, #28b485);
   background-clip: text;
   -webkit-background-clip: text;
   display: inline-block;
@@ -577,7 +577,9 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 10rem 0rem;
-  height: 100%;
+  padding-bottom: 20rem;
+  min-height: 100%;
+  height: auto;
   position: relative;
   overflow: hidden;
 }
@@ -650,12 +652,14 @@ body {
   position: absolute;
   top: 0%;
   left: 0%;
-  height: fit-content;
+  height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: -1;
   overflow: hidden;
 }
 .user-story--video__content {
+  min-height: 100%;
+  height: 100%;
   width: 100%;
   opacity: 0.2;
   object-fit: cover;
@@ -684,7 +688,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   padding: 2rem;
-  width: 50%;
+  width: 60%;
   height: 100%;
   background: rgba(255, 255, 255, 0.8);
   clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
@@ -705,10 +709,10 @@ body {
   color: inherit;
   padding: 1.5rem 2rem;
   border-radius: 2px;
-  background-color: rbga(#fff, 0.9);
+  background-color: rbga(green, 0.9);
   border: none;
   border-bottom: 3px solid transparent;
-  width: 90%;
+  width: 75%;
   display: block;
   transition: all 0.3s;
 }
@@ -725,7 +729,7 @@ body {
   /* Hide the browser's default radio button */
   /* Create a custom radio button */
   /* On mouse-over, add a grey background color */
-  /* When the radio button is checked, add a blue background */
+  /* When the radio button is checked, add background color */
   /* Create the indicator (the dot/circle - hidden when not checked) */
   /* Show the indicator (dot/circle) when checked */
   /* Style the indicator (dot/circle) */
@@ -782,6 +786,82 @@ body {
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+.booking__form-container .booking__form--btn:focus {
+  animation: pulseBtn 0.5s;
+}
+
+.nav__background {
+  position: fixed;
+  border-radius: 50%;
+  top: 6.5rem;
+  right: 6.5rem;
+  height: 6rem;
+  width: 6rem;
+  z-index: 900;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  background-image: radial-gradient(#7ed56f, #28b485);
+}
+.nav__checkbox {
+  display: none;
+}
+.nav__button {
+  background-color: #fff;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 999;
+  cursor: pointer;
+}
+.nav__navigation {
+  position: fixed;
+  opacity: 0;
+  width: 0;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 998;
+  transition: all 0.8s;
+}
+.nav__navigation--list {
+  list-style: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.nav__navigation--list .nav__item {
+  margin-bottom: 2rem;
+}
+.nav__navigation--list .nav__link {
+  display: inline-block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 250%;
+  transition: all 0.4s;
+}
+.nav__navigation--list .nav__link:hover, .nav__navigation--list .nav__link:active {
+  background-position: 100%;
+  color: #28b485;
+}
+.nav__navigation--list .nav__link span {
+  margin-right: 1rem;
+}
+.nav__checkbox:checked ~ .nav__background {
+  transform: scale(80);
+}
+.nav__checkbox:checked ~ .nav__navigation {
+  opacity: 1;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

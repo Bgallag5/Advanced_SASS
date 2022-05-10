@@ -26,13 +26,13 @@
     justify-content: flex-start;
     padding: 2rem;
     // align-items: flex-start;
-    width: 50%;
+    width: 60%;
     height: 100%;
     background: rgba($color-white, 0.8);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
     position: relative;
 
-    //apply to all children elements of the paretn container
+    //apply to all children elements of the parent container
     & > * {
       margin-bottom: 3rem;
     }
@@ -51,10 +51,10 @@
         color: inherit;
         padding: 1.5rem 2rem;
         border-radius: 2px;
-        background-color: rbga($color-white, 0.9);
+        background-color: rbga(green, 0.9);
         border: none;
         border-bottom: 3px solid transparent;
-        width: 90%;
+        width: 75%;
         display: block;
         transition: all 0.3s;
 
@@ -109,7 +109,7 @@
         background-color: #ccc;
       }
 
-      /* When the radio button is checked, add a blue background */
+      /* When the radio button is checked, add background color */
       .form__radio-label input:checked ~ .form__radio-button {
         background-color: $color-primary;
       }
@@ -138,13 +138,15 @@
     }
 
     &--btn {
-      //   position: absolute;
-      //   bottom: 10%;
       width: 35%;
       background: $color-green-grad;
       color: white;
       text-transform: uppercase;
       letter-spacing: 1px;
+
+      &:focus {
+        animation: pulseBtn 0.5s;
+      }
     }
   }
 }

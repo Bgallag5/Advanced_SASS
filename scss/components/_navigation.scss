@@ -1,0 +1,96 @@
+.nav {
+  
+  //full green background expands from behind nav icon
+  &__background {
+    position: fixed;
+    border-radius: 50%;
+    top: 6.5rem;
+    right: 6.5rem;
+    height: 6rem;
+    width: 6rem;
+    z-index: 900;
+    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    background-image: radial-gradient(
+      $color-primary--light,
+      $color-primary--dark
+    );
+  }
+
+  &__checkbox {
+    display: none;
+    //checkbox:checked -> display nav
+  }
+
+  &__button {
+    background-color: $color-white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 999;
+    cursor: pointer;
+  }
+  
+  &__navigation {
+    position: fixed;
+    //instead of display:none to initially hide the element, we use opacity: 0, width: 0
+    //this hides and prevents interaction, while allowing a transition from opacity 0-1
+    opacity: 0;
+    width: 0;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 998;
+    transition: all .8s;
+
+    &--list {
+      list-style: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      font-weight: 200;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      
+      .nav__item{
+        margin-bottom: 2rem;
+      }
+
+      .nav__link{
+          display: inline-block;
+          padding: 1rem;
+          text-decoration: none;
+          color: $color-white;
+          //set backgound-img to 2x (220% for safety) the size needed; split at 50% between desired colors
+          background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+          background-size: 250%;
+          transition: all .4s;
+          
+          &:hover,
+          &:active{
+              //on hover, slide the background all the way to the end (new background color is fully in view)
+              background-position: 100%;
+              color: $color-primary--dark;
+          }
+
+          span{
+              margin-right: 1rem;
+          }
+      }
+    }
+  }
+
+  //in the html the checkbox must be above the background for this to work 
+  &__checkbox:checked ~ &__background {
+        transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__navigation {
+        opacity: 1;
+        width: 100%;
+  }
+}
