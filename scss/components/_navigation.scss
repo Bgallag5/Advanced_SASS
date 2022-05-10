@@ -1,15 +1,14 @@
 .nav {
-  
   //full green background expands from behind nav icon
   &__background {
     position: fixed;
     border-radius: 50%;
-    top: 6.5rem;
-    right: 6.5rem;
+    top: 5rem;
+    right: 5rem;
     height: 6rem;
     width: 6rem;
     z-index: 900;
-    transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
     background-image: radial-gradient(
       $color-primary--light,
       $color-primary--dark
@@ -23,16 +22,21 @@
 
   &__button {
     background-color: $color-white;
+    box-shadow: 0px 5px 15px rgba(black, 0.3);
     height: 7rem;
     width: 7rem;
     position: fixed;
-    top: 6rem;
-    right: 6rem;
+    top: 4.5rem;
+    right: 4.5rem;
     border-radius: 50%;
     z-index: 999;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  
+
   &__navigation {
     position: fixed;
     //instead of display:none to initially hide the element, we use opacity: 0, width: 0
@@ -43,7 +47,7 @@
     right: 0;
     height: 100vh;
     z-index: 998;
-    transition: all .8s;
+    transition: all 0.8s;
 
     &--list {
       list-style: none;
@@ -55,42 +59,105 @@
       font-weight: 200;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      
-      .nav__item{
+
+      .nav__item {
         margin-bottom: 2rem;
       }
 
-      .nav__link{
-          display: inline-block;
-          padding: 1rem;
-          text-decoration: none;
-          color: $color-white;
-          //set backgound-img to 2x (220% for safety) the size needed; split at 50% between desired colors
-          background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
-          background-size: 250%;
-          transition: all .4s;
-          
-          &:hover,
-          &:active{
-              //on hover, slide the background all the way to the end (new background color is fully in view)
-              background-position: 100%;
-              color: $color-primary--dark;
-          }
+      .nav__link {
+        display: inline-block;
+        padding: 1rem;
+        text-decoration: none;
+        color: $color-white;
+        //set backgound-img to 2x (220% for safety) the size needed; split at 50% between desired colors
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          $color-white 50%
+        );
+        background-size: 250%;
+        transition: all 0.4s;
 
-          span{
-              margin-right: 1rem;
-          }
+        &:hover,
+        &:active {
+          //on hover, slide the background all the way to the end (new background color is fully in view)
+          background-position: 100%;
+          color: $color-primary--dark;
+        }
+
+        span {
+          margin-right: 1rem;
+        }
       }
     }
   }
 
-  //in the html the checkbox must be above the background for this to work 
+  //in the html the checkbox must be above the background for this to work
   &__checkbox:checked ~ &__background {
-        transform: scale(80);
+    transform: scale(80);
   }
 
   &__checkbox:checked ~ &__navigation {
-        opacity: 1;
-        width: 100%;
+    opacity: 1;
+    width: 100%;
+  }
+
+  //navigation bubble icon (three lines that transform into an X)
+  //hamburger menu is really one line (span) with before and after pseudo elements making 3 line
+  &__icon {
+    position: relative;
+    transition: all .3s;
+
+    //every element
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey--dark;
+      display: inline-block;
+    }
+
+    // only before/after pseudo elements
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: all .2s;
+    }
+
+    //only before pseudo
+    &::before {
+      top: -1rem;
+    }
+     //only after pseudo
+    &::after {
+      top: 1rem;
+    }
+  }
+
+  &__button:hover &__icon::before {
+    transform: translateY(-2px);
+  }
+
+  &__button:hover &__icon::after {
+    transform: translateY(2px);
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
   }
 }
