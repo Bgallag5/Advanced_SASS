@@ -46,6 +46,7 @@
 .btn-plain-green {
   margin-top: 4rem;
   background: none;
+  border: none;
   border-radius: 0px;
   border-bottom: 1px solid $color-primary--dark;
   color: $color-primary--dark;
@@ -53,6 +54,7 @@
   padding: 1rem;
   width: auto;
   overflow-x: hidden;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-2px);

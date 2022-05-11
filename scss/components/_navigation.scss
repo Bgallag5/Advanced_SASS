@@ -17,7 +17,6 @@
 
   &__checkbox {
     display: none;
-    //checkbox:checked -> display nav
   }
 
   &__button {
@@ -43,10 +42,11 @@
     //this hides and prevents interaction, while allowing a transition from opacity 0-1
     opacity: 0;
     visibility: hidden;
-    // transform: translateX(80rem);
+    transform: translateX(50%);
     top: 0;
     right: 0;
     height: 100vh;
+    width: 100%;
     z-index: 998;
     transition: all 0.8s;
 
@@ -101,8 +101,8 @@
 
   &__checkbox:checked ~ &__navigation {
     opacity: 1;
-    width: 100%;
-    transform: translateX(0rem);
+    visibility: visible;
+    transform: translateX(0);
   }
 
   //navigation bubble icon (three lines that transform into an X)
