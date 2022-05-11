@@ -765,26 +765,53 @@ body {
   flex-direction: column;
   gap: 2rem;
   margin-top: 2rem;
+  position: relative;
 }
-.booking__form-container .booking__form--user-inputs .booking__input {
+.booking__form-container .booking__form--user-inputs .booking__input--container::after {
+  content: "Full Name";
+  margin-left: 1rem;
+  line-height: 3;
+  transition: all 1s;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5rem);
+  display: block;
+}
+.booking__form-container .booking__form--user-inputs .booking__input--container:focus-within::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.booking__form-container .booking__form--user-inputs .booking__input--container .booking__input {
   font-size: 1.5rem;
   font-family: inherit;
   color: inherit;
   padding: 1.5rem 2rem;
   border-radius: 2px;
-  background-color: rbga(green, 0.9);
   border: none;
   border-bottom: 3px solid transparent;
   width: 75%;
   display: block;
-  transition: all 0.3s;
+  transition: all 0.4s;
+  position: relative;
 }
-.booking__form-container .booking__form--user-inputs .booking__input:focus {
+.booking__form-container .booking__form--user-inputs .booking__input--container .booking__input:focus {
   outline: none;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid #55c57a;
 }
-.booking__form-container .booking__form--user-inputs .booking__input:focus:invalid {
+.booking__form-container .booking__form--user-inputs .booking__input--container .booking__input:focus .booking__input--container::after {
+  opacity: 1;
+  visibility: visible;
+}
+.booking__form-container .booking__form--user-inputs .booking__input--container .booking__input:focus::placeholder {
+  opacity: 0;
+  visibility: hidden;
+}
+.booking__form-container .booking__form--user-inputs .booking__input--container .booking__input:placeholder-shown + .booking__input--container {
+  opacity: 0;
+}
+.booking__form-container .booking__form--user-inputs .booking__input--container .booking__input:focus:invalid {
   border-bottom: 3px solid orangered;
 }
 .booking__form-container .booking__form--checkbox {

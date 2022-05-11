@@ -45,29 +45,71 @@
       flex-direction: column;
       gap: 2rem;
       margin-top: 2rem;
-      .booking__input {
-        font-size: 1.5rem;
-        font-family: inherit;
-        color: inherit;
-        padding: 1.5rem 2rem;
-        border-radius: 2px;
-        background-color: rbga(green, 0.9);
-        border: none;
-        border-bottom: 3px solid transparent;
-        width: 75%;
-        display: block;
-        transition: all 0.3s;
+      position: relative;
 
-        &:focus {
-          outline: none;
-          box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-          border-bottom: 3px solid $color-primary;
+      .booking__input--container {
+        &::after {
+          content: "Full Name";
+          margin-left: 1rem;
+          line-height: 3;
+          transition:  all 1s;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-5rem);
+          display: block;
         }
 
-        &:focus:invalid{
-          border-bottom: 3px solid orangered;
+          //if anything inside is focused::after
+          &:focus-within::after{
+            opacity:1;
+            visibility: visible;
+            transform: translateY(0);
+          }
+
+        .booking__input {
+          font-size: 1.5rem;
+          font-family: inherit;
+          color: inherit;
+          padding: 1.5rem 2rem;
+          border-radius: 2px;
+          border: none;
+          border-bottom: 3px solid transparent;
+          width: 75%;
+          display: block;
+          transition: all 0.4s;
+          position: relative;
+  
+          &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+            border-bottom: 3px solid $color-primary;
+            .booking__input--container::after{
+              opacity: 1;
+              visibility: visible;
+            }
+            &::placeholder{
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+
+          &:placeholder-shown + .booking__input--container{
+            opacity: 0;
+          }
+  
+          &:focus:invalid {
+            border-bottom: 3px solid orangered;
+          }
+
         }
       }
+
+
+
+      // .input--subtitle{
+      //   color: $color-black;
+
+      // }
     }
 
     // RADIO BUTTONS //
