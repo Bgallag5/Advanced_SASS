@@ -54,6 +54,19 @@
   }
 }
 
+@keyframes pulseBtnGreen {
+  0% {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 0 $color-primary;
+  }
+  35%{
+    transform: translateY(0px);
+  }
+  100% {
+    box-shadow: 0 0 0 2rem rgba($color-primary--light, 0);
+  }
+}
+
 @keyframes wiggle {
   0%{
     transform: rotate(25deg);

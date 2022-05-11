@@ -85,6 +85,15 @@
           filter: blur(2px) brightness(90%);
         }
       }
+
+      &--text{
+        &::before{
+          content: '" ';
+        }
+        &::after{
+          content: ' "';
+        }
+      }
     }
   }
 

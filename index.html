@@ -86,7 +86,32 @@
             </section>
 
             <section class="popular section">
-            <h1 class="secondary-header popular__header">Most Popular Tours</h1>
+
+                <div class="popup" id="popup">
+                    <div class="popup">
+                        <div class="popup__images">
+                            <div class="popup__images--container">
+                                <img src="./img/nat-10.jpg" alt="" class="popup__images--img">
+                            </div>
+                            <div class="popup__images--container">
+                                <img src="./img/nat-9.jpg" alt="" class="popup__images--img">
+                            </div>  
+                        </div>
+                        <div class="popup__content">
+                            <a href="#popular" class="popup__content--close" title="close">X</a>
+                            <h2 class="secondary-header">Start Booking Now</h2>
+                            <h5 class="text-header--big">IMPORTANT - PLEASE READ THESE TERMS BEFORE BOOKING</h5>
+                            <div class="popup__content--paragraphs">
+                                <p class="popup-paragraph pg-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed sed risus pretium quam. Aliquam sem et tortor consequat id. Volutpat odio facilisis mauris sit amet massa vitae. Mi bibendum neque egestas congue. Placerat orci nulla pellentesque dignissim enim sit. Vitae semper quis lectus nulla at volutpat diam ut venenatis. Malesuada pellentesque elit eget gravida cum sociis natoque pe</p>
+                                <p class="popup-paragraph">natibus et. Proin fermentum leo vel orci porta non pulvinar neque laoreet. Gravida neque convallis a cras semper. Molestie at elementum eu facilisis sed odio morbi quis. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget. Nam libero justo laoreet sit. Amet massa vitae tortor condimentum lacinia quis vel eros donec. Sit amet facilisis magna etiam. Imperdiet sed euismod nisi porta.</p>
+                            </div>
+                            <button class="btn btn-round-green popup__btn">Next</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            <h1 id="popular" class="secondary-header popular__header">Most Popular Tours</h1>
             <div class="popular__cards">
                 <div class="popular__cards--card">
                     <div class="card__side card__side--front card__side--front-1">
@@ -106,7 +131,7 @@
                             <p>Only</p>
                             <h2>$277</h2>
                         </div>
-                        <div class="card__side--back-button btn">Book Now!</div>
+                        <a href="#popup" class="card__side--back-button btn">Book Now!</a>
                     </div>
                 </div>
                 <div class="popular__cards--card">
@@ -127,7 +152,7 @@
                             <p>Only</p>
                             <h2>$497</h2>
                         </div>
-                        <div class="card__side--back-button btn">Book Now!</div>
+                        <a href="#popup" class="card__side--back-button btn">Book Now!</a>
                     </div>
                 </div>
                 <div class="popular__cards--card">
@@ -148,7 +173,7 @@
                             <p>Only</p>
                             <h2>$897</h2>
                         </div>
-                        <div class="card__side--back-button btn">Book Now!</div>
+                        <a href="#popup" class="card__side--back-button btn">Book Now!</a>
                     </div>
                 </div>
             </div>
@@ -241,7 +266,7 @@
                 <label for="nav-toggle" class="nav__button">
                     <span class="nav__icon">&nbsp;</span>
                 </label>
-                
+
                 <div class="nav__background"></div>
 
 
