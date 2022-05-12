@@ -758,19 +758,22 @@ body {
   position: relative;
 }
 .booking__form-container .booking__form > * {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 .booking__form-container .booking__form--user-inputs {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1rem;
   position: relative;
+}
+.booking__form-container .booking__form--user-inputs .booking__input--container {
+  margin: 1px;
 }
 .booking__form-container .booking__form--user-inputs .booking__input--container::after {
   content: "Full Name";
   margin-left: 1rem;
-  line-height: 3;
+  line-height: 2;
   transition: all 1s;
   opacity: 0;
   visibility: hidden;
