@@ -1,5 +1,79 @@
 body {
-    font-family: "Mulish", sans-serif;
-    line-height: 1.7;
-    color: $text-grey-light;
+  font-family: "Mulish", sans-serif;
+  line-height: 1.7;
+  color: $text-grey-light;
+  font-size: 1.5rem;
+
+  @include respond (tablet){
+    font-size: 1.8rem;
   }
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  //force text to stay on one line: white-space: nowrap, overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &--main {
+    display: block;
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 3rem;
+    text-align: center;
+
+    @include respond(phone) {
+      font-size: 5rem;
+      font-weight: 300;
+      letter-spacing: 1rem;
+    }
+  }
+
+  &--sub {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 400;
+    width: 100%;
+    height: auto;
+    letter-spacing: 1.5rem;
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
+  }
+}
+
+.header-secondary{
+  font-size: 4rem;
+  margin: 1rem 0rem 8rem 0rem;
+  text-transform: uppercase;
+  color: transparent;
+  background-image: $color-green-grad;
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+  text-align: center;
+
+  @include respond(tablet){
+      font-size: 3.5rem;
+  }
+  @include respond(phone){
+      font-size: 3rem;
+  }
+}
+
+.text-header--big {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  color: $text-grey-dark;
+}
+
+.text-header--small {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: $text-grey-dark;
+}

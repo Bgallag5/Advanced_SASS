@@ -25,6 +25,10 @@
     gap: 3rem;
     width: 70%;
 
+    @include respond (phone){
+      width: 90%;
+    }
+
     .story {
       background-color: rgba(white, 0.7);
       box-shadow: 0 5rem 10rem rgba($color-black, 0.2);
@@ -33,9 +37,21 @@
       //instead of clip path, use skew to angle/lean box left or right...
       transform: skewX(-12deg);
 
+      @include respond (phone){
+        // height: 35vh;
+        padding: 3rem 1rem;
+        transform: skewX(-5deg)
+
+      }
+
       & > * {
         //...then un-skew all content within that container
         transform: skewX(12deg);
+
+        @include respond (phone){
+          transform: skewX(5deg)
+  
+        }
       }
 
       &--img {

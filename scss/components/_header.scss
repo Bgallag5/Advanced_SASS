@@ -1,6 +1,7 @@
 /* HEADER - HERO ////////////////// */
 .header {
   height: 95vh;
+  width: 100vw;
   /* background image with color gradient overlayed */
   background: linear-gradient(to right, $color-primary--dark2, $color-secondary--dark2),
     url("../img/hero.jpg");
@@ -59,29 +60,30 @@
   }
 }
 
-// HERO TEXT ////
-.heading-primary {
-  color: white;
-  text-transform: uppercase;
+// // HERO TEXT ////
+// .heading-primary {
+//   color: white;
+//   text-transform: uppercase;
+//   //force text to stay on one line: white-space: nowrap, overflow: hidden;
+//   white-space: nowrap;
+//   overflow: hidden;
 
-  &--main {
-    display: block;
-    font-size: 5rem;
-    font-weight: 400;
-    letter-spacing: 3rem;
-    text-align: center;
-  }
-  &--sub {
-    display: block;
-    font-size: 3rem;
-    font-weight: 400;
-    letter-spacing: 15px;
-    width: 100%;
-    &::before {
-      opacity: 1 !important;
-    }
-  }
-}
+//   &--main {
+//     display: block;
+//     font-size: 5rem;
+//     font-weight: 400;
+//     letter-spacing: 3rem;
+//     text-align: center;
+//   }
+//   &--sub {
+//     display: inline-block;
+//     font-size: 3rem;
+//     font-weight: 400;
+//     letter-spacing: 15px;
+//     width: 100%;
+//     height: auto;
+//   }
+// }
 
 .sub--animate {
   animation: moveInRight 1.5s ease-out 0.4s;

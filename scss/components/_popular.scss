@@ -3,20 +3,20 @@
   flex-direction: column;
   // justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  margin: 10rem 0rem;
   position: relative;
 
-  &__header {
-    margin-bottom: 8rem;
-  }
 
   &__cards {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 6rem;
     width: 80%;
-    // border: 1px solid blue;
+
+    @include respond(tablet){
+      gap: 2rem;
+      font-size: 2rem;
+    }
+
     &--card {
       perspective: 150rem;
       -moz-perspective: 150rem;
@@ -28,13 +28,27 @@
       color: white;
       //for flip to be smooth, set height and width on parent element...
       height: 65vh;
-      width: 20vw;
+      width: 80%;
+
+      @include respond(tablet_landscape){
+        width: 100%;
+        height: 60vh;
+      }
+
+      @include respond(tablet){
+        width: 65%;
+        height: 65vh;
+      }
+
+      @include respond (phone){
+        width: 85%;
+      }
 
       .card__side {
         perspective: 150rem;
         //...then match height and set width to 100%
         width: 100%;
-        height: 65vh;
+        height: 100%;
         position: absolute;
         transition: all 0.6s ease-out;
         top: 0;
@@ -122,7 +136,7 @@
 
   //top half of all cards
   .card__header {
-    height: 23rem;
+    height: 35%;
     //new css property blend-mode: mix two different backgrounds
     background-blend-mode: screen;
     position: relative;
@@ -140,7 +154,10 @@
       width: 60%;
       position: absolute;
       display: inline-block;
-      // box-decoration-break: clone;
+
+      // @include respond(tablet){
+      //   font-size: 4.5rem;
+      // }
       
       span {
         text-align: right;

@@ -1,5 +1,10 @@
 .section{
     height: 100vh;
+
+    @include respond(tablet){
+      height: auto;
+      min-height: 100vh;
+    }
 }
 
 .row {
@@ -10,6 +15,11 @@
   margin: 0 auto;
 //   width: auto;
   gap: 1rem;
+
+  @include respond(tablet){
+    flex-direction: column;
+  }
+
   &__col {
     flex-direction: column;
     height: 100%;

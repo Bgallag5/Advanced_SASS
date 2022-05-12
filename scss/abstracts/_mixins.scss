@@ -1,0 +1,56 @@
+
+
+
+/*
+// MEDIA QUERY // 
+
+0-600px - Phone
+601-900 - Tablet
+901 - 1200 - Tablet Ladscape
+[1200- 1800] - Standard Desktop, already done
+1800+ - Large Desktop
+*/
+
+
+
+/*
+- @content represents all style passed in when this named media query is called:
+- we can programatically define our media breakpoints with mixins, just like a switch statement
+- for the last breakpoint we use MIN-WIDTH to define everything OVER a certain size
+ $breakpoint arguments:
+ - phone
+ - tablet 
+ - tablet_landscape
+ - desktop (default - no work needed)
+ - large_desktop
+
+
+ 1em == 16px
+*/
+@mixin respond($breakpoint){
+    @if $breakpoint == phone {
+        // @media (max-width: 600px){@content};
+        @media only screen and (max-width: 37.5em){@content};    // 600px/16px = 37.5em
+    }
+    @if $breakpoint == tablet {
+        @media only screen and (max-width: 56.25em){@content};
+    }
+    @if $breakpoint == tablet_landscape {
+        @media only screen and (max-width: 75em){@content};
+    }
+    @if $breakpoint == large_desktop {
+        @media only screen and (min-width: 112.5em){@content};
+    }
+}
+/*
+- the above mixin defines our media breakpoints 
+- we can call this mixin on any element in our CSS and pass in the $breakpoint variable to define...
+...new style for that element at that specific break point:
+html {
+  font-size: 62.5%;
+  @include respond(phone){
+    font-size: 50%;
+  }
+}
+*/
+

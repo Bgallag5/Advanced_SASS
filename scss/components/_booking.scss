@@ -10,28 +10,33 @@
   justify-content: center;
 }
 .booking__form-container {
-  background-color: white;
   max-height: 65vh;
-  height: auto;
+  height: 65vh;
   width: 65vw;
-  // padding: 2rem;
   background: url("../img/nat-4.jpg");
   background-position: top;
   background-size: cover;
-  object-fit: cover;
+
+  @include respond (phone){
+    width: 90%;
+  }
 
   .booking__form {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: left;
     padding: 2rem;
-    // align-items: flex-start;
     width: 60%;
+    left: 0;
     height: 100%;
     background: rgba($color-white, 0.8);
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
     position: relative;
 
+    @include respond (tablet){
+      width: 95%;
+    }
+    
     //apply to all children elements of the parent container
     & > * {
       margin-bottom: 1rem;
