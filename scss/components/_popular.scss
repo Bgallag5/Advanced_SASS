@@ -6,16 +6,10 @@
   margin: 10rem 0rem;
   position: relative;
 
-
   &__cards {
     justify-content: center;
     gap: 6rem;
     width: 80%;
-
-    @include respond(tablet){
-      gap: 2rem;
-      font-size: 2rem;
-    }
 
     &--card {
       perspective: 150rem;
@@ -27,20 +21,21 @@
       position: relative;
       color: white;
       //for flip to be smooth, set height and width on parent element...
-      height: 65vh;
-      width: 80%;
+      height: 100%;
+      // height: 65vh;
+      width: 75%;
 
-      @include respond(tablet_landscape){
+      @include respond(tablet_landscape) {
         width: 100%;
-        height: 60vh;
+        // height: 60vh;
       }
 
-      @include respond(tablet){
+      @include respond(tablet) {
         width: 65%;
-        height: 65vh;
+        // height: 65vh;
       }
 
-      @include respond (phone){
+      @include respond(phone) {
         width: 85%;
       }
 
@@ -59,6 +54,7 @@
 
         &--front {
           //   background-color: orangered;
+          height: 65vh;
         }
 
         &--back {
@@ -71,6 +67,7 @@
           text-align: center;
           justify-content: center;
           gap: 20%;
+          height: 65vh;
 
           &-button {
             letter-spacing: 1px;
@@ -126,6 +123,75 @@
         transform: rotateY(0);
       }
     }
+
+    //restyle for tablet and smaller
+    @include respond(tablet) {
+      justify-content: center;
+      width: 70%;
+      gap: 4rem;
+      font-size: 2rem;
+
+      &--card {
+        // border-radius: 5rem;
+        height: 100%;
+        // background-color: white;
+        
+        .card__side {
+          height: auto;
+          position: relative;
+
+          &--front {
+            height: 75vh;
+            padding-bottom: 8rem;
+            width: 99%;
+          }
+
+          &--back {
+            //back side is rotated 180deg to start
+            -webkit-transform: rotateY(0deg);
+            transform: translateY(-5rem) rotateY(0deg);
+            padding: 2rem;
+            margin-bottom: 0;
+            -webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
+            clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 100%);
+
+            &-button {
+              letter-spacing: 1px;
+              margin-top: 5%;
+              cursor: pointer;
+              text-decoration: none;
+              position: relative;
+              color: black;
+              background-color: white;
+              width: 20rem;
+
+              &:hover {
+                // animation: pulseBtn 1s;
+                // transform: translateY(-2px);
+              }
+              &:active {
+                // transform: translateY(5px);
+              }
+            }
+
+            &-price h2 {
+              font-size: 6rem;
+              font-weight: 300;
+            }
+
+          }
+        }
+        &:hover .card__side--front {
+          -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+        }
+        &:hover .card__side--back {
+          // -webkit-transform: rotateY(0);
+          // transform: rotateY(0);
+          transform: translateY(-5rem);
+        }
+      }
+    }
   }
 }
 
@@ -133,32 +199,37 @@
 .card__side--front {
   display: flex;
   flex-direction: column;
+  min-height: 65vh;
+  height: auto;
 
   //top half of all cards
   .card__header {
-    height: 35%;
+    height: 100%;
     //new css property blend-mode: mix two different backgrounds
     background-blend-mode: screen;
     position: relative;
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
-    
+    display: block;
+    overflow: auto;
+
     &--title {
       color: white;
       right: 0;
-      text-align: right;
       top: 1%;
+      text-align: right;
       padding: 0.6rem;
       font-size: 2.8rem;
       font-weight: 300;
-      width: 60%;
-      position: absolute;
-      display: inline-block;
+      width: 100%;
+      height: auto;
+      float: right;
 
-      // @include respond(tablet){
-      //   font-size: 4.5rem;
-      // }
-      
+
+      @include respond(tablet){
+        font-size: 4.5rem;
+      }
+
       span {
         text-align: right;
         padding: 0.5rem;
