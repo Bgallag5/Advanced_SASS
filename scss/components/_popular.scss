@@ -11,6 +11,10 @@
     gap: 6rem;
     width: 80%;
 
+    @include respond(phone) {
+      width: 100%;
+    }
+
     &--card {
       perspective: 150rem;
       -moz-perspective: 150rem;
@@ -36,7 +40,10 @@
       }
 
       @include respond(phone) {
-        width: 85%;
+        width: 90%;
+      }
+      @include respond(phone_small) {
+        width: 98%;
       }
 
       .card__side {
@@ -127,7 +134,7 @@
     //restyle for tablet and smaller
     @include respond(tablet) {
       justify-content: center;
-      width: 70%;
+      width: 75%;
       gap: 4rem;
       font-size: 2rem;
 
@@ -211,7 +218,9 @@
     -webkit-clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
     clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
     display: block;
-    overflow: auto;
+    // overflow: auto;
+
+
 
     &--title {
       color: white;
@@ -219,7 +228,7 @@
       top: 1%;
       text-align: right;
       padding: 0.6rem;
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 300;
       width: 100%;
       height: auto;
@@ -227,7 +236,11 @@
 
 
       @include respond(tablet){
-        font-size: 4.5rem;
+        font-size: 3rem;
+      }
+
+      @include respond(phone_small){
+        font-size: 2.5rem;
       }
 
       span {

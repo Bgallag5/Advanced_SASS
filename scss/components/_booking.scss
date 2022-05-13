@@ -17,7 +17,7 @@
   background-position: top;
   background-size: cover;
 
-  @include respond (phone){
+  @include respond (tablet){
     width: 90%;
   }
 

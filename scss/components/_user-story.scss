@@ -25,7 +25,7 @@
     gap: 3rem;
     width: 70%;
 
-    @include respond (phone){
+    @include respond (tablet){
       width: 90%;
     }
 
@@ -37,7 +37,7 @@
       //instead of clip path, use skew to angle/lean box left or right...
       transform: skewX(-12deg);
 
-      @include respond (phone){
+      @include respond (tablet){
         // height: 35vh;
         padding: 3rem 1rem;
         transform: skewX(-5deg)
@@ -48,7 +48,7 @@
         //...then un-skew all content within that container
         transform: skewX(12deg);
 
-        @include respond (phone){
+        @include respond (tablet){
           transform: skewX(5deg)
   
         }
